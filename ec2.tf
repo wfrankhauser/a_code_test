@@ -10,7 +10,7 @@ resource "aws_key_pair" "deployer" {
 
 resource "local_file" "ssh_key" {
     content     = tls_private_key.ec2_instance.private_key_pem
-    filename = "${path.module}/wfrankhauser_id_rsa"
+    filename = "${path.module}/wfrankhauser.pem"
 }
 
 resource "aws_instance" "api_nodes" {
